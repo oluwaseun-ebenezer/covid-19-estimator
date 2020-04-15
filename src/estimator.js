@@ -31,12 +31,12 @@ const covid19ImpactEstimator = (data) => {
     severeImpact.infectionsByRequestedTime * 0.15
   );
 
-  impact.hospitalBedsByRequestedTime = discardQuotient(
+  impact.hospitalBedsByRequestedTime = discardQuotient((
     data.totalHospitalBeds * 0.35
-  ) - impact.severeCasesByRequestedTime;
-  severeImpact.hospitalBedsByRequestedTime = discardQuotient(
+  ) - impact.severeCasesByRequestedTime);
+  severeImpact.hospitalBedsByRequestedTime = discardQuotient((
     data.totalHospitalBeds * 0.35
-  ) - severeImpact.severeCasesByRequestedTime;
+  ) - severeImpact.severeCasesByRequestedTime);
 
   // challenge 3
   impact.casesForICUByRequestedTime = discardQuotient(impact.infectionsByRequestedTime * 0.05);
